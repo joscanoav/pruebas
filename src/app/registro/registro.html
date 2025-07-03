@@ -1,0 +1,42 @@
+<!-- Formulario de registro -->
+<form (ngSubmit)="registrar()">
+  <!-- Al hacer submit, Angular ejecuta el método registrar() del componente -->
+  
+  <label>
+    Nombre:
+    <!--
+      [(ngModel)]="nombre"
+        – Two‑way binding: sincroniza en tiempo real el valor del input
+          con la propiedad `nombre` del componente.
+      name="nombre"
+        – Requisito de NgModel: cada control debe tener un atributo name único
+      placeholder="Tu nombre"
+        – Texto guía que aparece cuando el campo está vacío
+    -->
+    <input
+      [(ngModel)]="nombre"
+      name="nombre"
+      placeholder="Tu nombre"
+    >
+  </label>
+  
+  <!--
+    Botón de tipo "submit": provoca el evento submit del formulario,
+    que a su vez dispara (ngSubmit).
+  -->
+  <button type="submit">
+    Registrar
+  </button>
+</form>
+
+<!--
+  *ngIf="nombre"
+    – Directiva estructural: sólo renderiza este párrafo si
+      la propiedad `nombre` no está vacía (truthy).
+  ¡Hola, {{ nombre }}!
+    – Interpolación: muestra el texto literal "¡Hola, " seguido
+      del valor actual de `nombre`, y luego un signo de exclamación.
+-->
+<p *ngIf="nombre">
+  ¡Hola, {{ nombre }}!
+</p>

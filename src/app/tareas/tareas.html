@@ -1,0 +1,60 @@
+<h3>Lista de tareas</h3>
+<ul>
+  <li *ngFor="let tarea of tareas; let i = index">
+    {{ tarea }}
+    <button (click)="eliminar(i)">Eliminar</button>
+  </li>
+</ul>
+
+<input [(ngModel)]="nuevaTarea" name="nuevaTarea" placeholder="Nueva tarea">
+<button (click)="agregar()">Agregar</button>
+
+<p *ngIf="tareas.length === 0">No hay tareas pendientes.</p>
+
+<!-- 
+
+<h3>Lista de tareas</h3>
+
+Encabezado que indica el propósito de la sección.
+
+<ul> / </ul>
+
+Contenedor de lista no ordenada para mostrar las tareas.
+
+<li *ngFor="let tarea of tareas; let i = index">
+
+*ngFor: directiva estructural que itera sobre el array tareas.
+
+tarea: variable local que contiene el valor de cada elemento.
+
+i = index: índice de la tarea actual en el array.
+
+{{ tarea }}
+
+Interpolación que muestra el texto de la tarea.
+
+<button (click)="eliminar(i)">Eliminar</button>
+
+(click): enlace de evento; al hacer clic invoca el método eliminar(i) pasando el índice.
+
+eliminar(i): función del componente que quita la tarea de la posición i.
+
+<input [(ngModel)]="nuevaTarea" name="nuevaTarea" placeholder="Nueva tarea">
+
+[(ngModel)]="nuevaTarea": enlace bidireccional entre el valor del input y la propiedad nuevaTarea.
+
+name="nuevaTarea": atributo obligatorio para usar ngModel.
+
+placeholder="Nueva tarea": texto guía que aparece cuando el campo está vacío.
+
+<button (click)="agregar()">Agregar</button>
+
+(click): al pulsar, ejecuta agregar().
+
+agregar(): método del componente que añade nuevaTarea al array tareas y limpia el campo.
+
+<p *ngIf="tareas.length === 0">No hay tareas pendientes.</p>
+
+*ngIf="tareas.length === 0": directiva estructural que muestra este párrafo solo si no quedan tareas en el array.
+
+-->

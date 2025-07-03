@@ -1,0 +1,29 @@
+<h3>Usuarios</h3>
+<ul>
+  <li *ngFor="let usuario of usuarios">{{ usuario }}</li>
+</ul>
+<p *ngIf="usuarios.length === 0">Cargando usuarios...</p>
+
+<!-- 
+<h3>Usuarios</h3>
+
+Encabezado que indica que a continuación se listarán los usuarios.
+
+<ul> / </ul>
+
+Contenedor de lista no ordenada para mostrar cada usuario como elemento de lista.
+
+<li *ngFor="let usuario of usuarios">{{ usuario }}</li>
+
+*ngFor="let usuario of usuarios": directiva estructural que itera sobre el array usuarios.
+
+usuario: variable local que, en cada iteración, contiene el nombre de un usuario.
+
+{{ usuario }}: interpolación que muestra el valor actual de usuario dentro de la etiqueta <li>.
+
+<p *ngIf="usuarios.length === 0">Cargando usuarios...</p>
+
+*ngIf="usuarios.length === 0": directiva estructural que muestra este párrafo solo si el array usuarios está vacío.
+
+Texto “Cargando usuarios…” para indicar al usuario que la aplicación aún está obteniendo los datos (por ejemplo, de un servicio).
+-->
